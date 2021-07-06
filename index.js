@@ -45,8 +45,9 @@ function dateTime() {
 	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 	let dayName = days[currentDate.getDay()]
-	let monthName = months[currentDate.getMonth()+1]
-	document.querySelector('.datetime__time').innerHTML = `<strong>Current UTC time: ${currentDate.getUTCHours()}:${currentDate.getUTCMinutes()}</strong>`
+	let monthName = months[currentDate.getMonth()]
+	let minutes = (currentDate.getMinutes() < 10? '0' : '') + currentDate.getMinutes();
+	document.querySelector('.datetime__time').innerHTML = `<strong>Current UTC time: ${currentDate.getUTCHours()}:${minutes}</strong>`
 	document.querySelector('.datetime__date').innerHTML = `<em>${dayName}, ${currentDate.getDay()} ${monthName} ${currentDate.getFullYear()}</em>`
 	setTimeout(dateTime, 5000); 
 }

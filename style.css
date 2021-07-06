@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	display: grid; 
+  grid-template-columns: 1.4fr 0.5fr; 
+  grid-template-rows: 0.3fr 1.7fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    ". ."
+    ". ."; 
+}
+
+.location, .datetime, .map, .people {
+	border: 1px solid grey;
+	padding: 10px;
+}
